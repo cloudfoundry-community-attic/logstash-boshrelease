@@ -3,3 +3,7 @@ java/jre-7u4-linux-x64.tar.gz:
   object_id: edb3e0db-3b56-42f3-ac53-50a271abb102
   sha: 1108d1744baa73bf6caa2adf965d0f489ea1ef60
   size: 32771159
+logstash-monolithic/logstash-1.1.1-monolithic.jar:
+  object_id: ce9b15cd-16a9-4f42-b168-3cc9e253a902
+  sha: afcc2c0687c06cd9413da46f2cef1be016a45e3f
+  size: 53813805

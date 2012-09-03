@@ -1,0 +1,6 @@
+---
+name: logstash-monolithic
+dependencies:
+- java7
+files:
+- logstash-monolithic/logstash-1.1.1-monolithic.jar
