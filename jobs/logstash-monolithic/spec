@@ -1,7 +1,7 @@
 ---
 name: logstash-monolithic
 packages:
-- java
+- java7
 - logstash-monolithic
 templates:
   bin/logstash-monolithic_ctl: bin/logstash-monolithic_ctl
