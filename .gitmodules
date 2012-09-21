@@ -1,0 +1,3 @@
+[submodule "src/kibana"]
+	path = src/kibana
+	url = https://github.com/rashidkpc/Kibana.git

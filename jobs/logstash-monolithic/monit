@@ -1,0 +1,5 @@
+check process logstash-monolithic
+  with pidfile /var/vcap/sys/run/logstash-monolithic/logstash-monolithic.pid
+  start program "/var/vcap/jobs/logstash-monolithic/bin/monit_debugger logstash-monolithic_ctl '/var/vcap/jobs/logstash-monolithic/bin/logstash-monolithic_ctl start'"
+  stop program "/var/vcap/jobs/logstash-monolithic/bin/monit_debugger logstash-monolithic_ctl '/var/vcap/jobs/logstash-monolithic/bin/logstash-monolithic_ctl stop'"
+  group vcap

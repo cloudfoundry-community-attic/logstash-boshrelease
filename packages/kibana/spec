@@ -1,0 +1,6 @@
+---
+name: kibana
+dependencies:
+- ruby
+files:
+- src/kibana/*
