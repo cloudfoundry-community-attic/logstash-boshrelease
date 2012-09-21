@@ -79,3 +79,5 @@ done
 PIDFILE=$RUN_DIR/$JOB_NAME.pid
 
 echo '$PATH' $PATH
+echo '$CLASSPATH' $CLASSPATH
+

@@ -8,3 +8,8 @@ export HOME=/var/vcap
 
 
 PATH=/var/vcap/packages/java7/bin:$PATH
+
+mkdir $BOSH_INSTALL_TARGET/lib
+cp logstash-monolithic/*.jar $BOSH_INSTALL_TARGET/lib/
+
+# jar files within lib/ folders are automatically added to $CLASSPATH by jobs
