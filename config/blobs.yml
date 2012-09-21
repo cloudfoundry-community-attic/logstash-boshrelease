@@ -7,3 +7,15 @@ logstash-monolithic/logstash-1.1.1-monolithic.jar:
   object_id: ce9b15cd-16a9-4f42-b168-3cc9e253a902
   sha: afcc2c0687c06cd9413da46f2cef1be016a45e3f
   size: 53813805
+ruby/bundler-1.2.1.gem:
+  object_id: a4c9fd86-f81f-4f4f-87ef-210180c901b2
+  sha: 0cbe6ad7a41f064d6c11c1058465fffb1bd58069
+  size: 226816
+ruby/ruby-1.9.2-p180.tar.gz:
+  object_id: 8956d2a6-66c4-4f71-a99b-97d1037599c7
+  sha: 6a482bc07239b37bcadf68dda63c65d20dc19ebe
+  size: 11158935
+ruby/rubygems-1.8.24.tgz:
+  object_id: 35e8d3cc-f762-46fb-93ea-e5fdbb410b0e
+  sha: 30f27047e74f7943117736a0d3e224994fee0905
+  size: 380101
