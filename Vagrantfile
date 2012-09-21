@@ -3,8 +3,10 @@ Vagrant::Config.run do |config|
   downloads = "https://github.com/downloads/drnic/bosh-solo/"
   config.vm.box_url = "#{downloads}bosh-solo-0.6.4.box"
 
-  # config.vm.forward_port 80, 5001
-  # config.vm.network :hostonly, "33.33.33.30"
+  config.vm.forward_port 9292, 9292 # logstash
+  config.vm.forward_port 9200, 9200 # elasticsearch
+  config.vm.forward_port 5601, 5601 # Kibana
+  config.vm.forward_port 3000, 3000 # some rails app
 
   config.vm.provision :shell, :path => "scripts/vagrant-setup.sh"
 
