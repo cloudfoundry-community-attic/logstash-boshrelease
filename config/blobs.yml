@@ -19,3 +19,7 @@ ruby/rubygems-1.8.24.tgz:
   object_id: 35e8d3cc-f762-46fb-93ea-e5fdbb410b0e
   sha: 30f27047e74f7943117736a0d3e224994fee0905
   size: 380101
+curl/curl-7.27.0.tar.gz:
+  object_id: 3d412d9e-e797-46c0-8093-59f3e6330d07
+  sha: 93ec1e206350632f550cc2ba3327e2a588bf0617
+  size: 3154661

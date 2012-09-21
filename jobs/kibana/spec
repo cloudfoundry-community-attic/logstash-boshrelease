@@ -2,6 +2,7 @@
 name: kibana
 packages:
 - ruby
+- curl
 - kibana
 templates:
   bin/kibana_ctl: bin/kibana_ctl

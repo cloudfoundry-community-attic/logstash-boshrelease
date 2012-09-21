@@ -5,14 +5,11 @@ set -u # report the usage of uninitialized variables
 # $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
 # $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
 export HOME=/var/vcap
-PATH=/var/vcap/packages/ruby/bin:$PATH
 
-cp -a kibana/* ${BOSH_INSTALL_TARGET}
-cd ${BOSH_INSTALL_TARGET}
+# curl install instructions http://curl.haxx.se/docs/install.html
 
-curl_dir=/var/vcap/packages/curl
-bundle config build.curb \
-  --with-curl-lib=${curl_dir}/lib  \
-  --with-curl-include=${curl_dir}/include
-
-bundle install --local --deployment --binstubs --without development test
+tar xfv curl/curl-7.27.0.tar.gz
+cd curl-7.27.0
+./configure --prefix=${BOSH_INSTALL_TARGET}
+make
+make install
