@@ -3,7 +3,7 @@ require 'ostruct'
 properties.redis ||= OpenStruct.new
 %>
 daemonize yes
-pidfile /var/vcap/sys/run/broker_redis/redis.pid
+pidfile /var/vcap/sys/run/broker_redis/broker_redis.pid
 timeout 300
 loglevel notice
 logfile stdout
