@@ -2,6 +2,7 @@
 name: web_logstash
 packages:
 - logstash-monolithic
+- java7
 templates:
   bin/web_logstash_ctl: bin/web_logstash_ctl
   bin/monit_debugger: bin/monit_debugger

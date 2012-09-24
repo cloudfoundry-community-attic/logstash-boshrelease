@@ -2,6 +2,7 @@
 name: indexer
 packages:
 - logstash-monolithic
+- java7
 templates:
   bin/indexer_ctl: bin/indexer_ctl
   bin/monit_debugger: bin/monit_debugger

@@ -1,6 +1,5 @@
 check process indexer
   with pidfile /var/vcap/sys/run/indexer/indexer.pid
   start program "/var/vcap/jobs/indexer/bin/monit_debugger indexer_ctl '/var/vcap/jobs/indexer/bin/indexer_ctl start'"
-    with timeout 120 seconds
   stop program "/var/vcap/jobs/indexer/bin/monit_debugger indexer_ctl '/var/vcap/jobs/indexer/bin/indexer_ctl stop'"
   group vcap
