@@ -3,7 +3,7 @@ jobs:
 - broker_redis
 - indexer
 - elasticsearch
-# - web_logstash
+- web_logstash
 properties:
   redis:
     host: 127.0.0.1

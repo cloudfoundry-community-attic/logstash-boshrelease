@@ -16,9 +16,11 @@ case $1 in
 
 # elasticsearch { cluster => 'logstash' host => '127.0.0.1' port => 9300}
     exec java -jar /var/vcap/packages/logstash-monolithic/lib/logstash-1.1.1-monolithic.jar \
-      web  \
-         >>$LOG_DIR/$JOB_NAME.stdout.log \
-         2>>$LOG_DIR/$JOB_NAME.stderr.log &
+      web \
+        --address 0.0.0.0 \
+        --port 9292 \
+        --backend elasticsearch://$ES_HOST:$ES_TRANSPORT_PORT/$ES_CLUSTER_NAME
+        --log $LOG_DIR/$JOB_NAME.log &
 
     # store pid in $PIDFILE
     echo $! > $PIDFILE
