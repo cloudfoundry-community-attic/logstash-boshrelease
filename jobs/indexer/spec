@@ -22,6 +22,9 @@ properties:
   redis.broker_key:
     default: logstash
     description: List key for inbound events to be stored before indexing
+  elasticsearch.cluster_name:
+    default: logstash
+    description: Used to discover elasticsearch cluster
   elasticsearch.host:
     default: 127.0.0.1
     description: Host where elasticsearch can be found
