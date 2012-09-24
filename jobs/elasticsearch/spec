@@ -1,0 +1,30 @@
+---
+name: elasticsearch
+packages:
+- elasticsearch
+templates:
+  bin/elasticsearch_ctl: bin/elasticsearch_ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+  config/elasticsearch.conf.erb: config/elasticsearch.conf
+  config/elasticsearch.yml.erb: config/elasticsearch.yml
+  config/logging.yml: config/logging.yml
+properties:
+  elasticsearch.cluster_name:
+    default: logstash
+    description: Used to discover and auto-join nodes together
+  elasticsearch.host:
+    default: 0.0.0.0
+    description: Used by modules to bind and publish
+  elasticsearch.transport_port:
+    default: 9300
+    description: The port for ElasticSearch transport to use. This is not the ElasticSearch REST API port.
+  elasticsearch.es_min_mem:
+    default: 128m
+    description: Minimum memory allocated to JVM running ElasticSearch
+  elasticsearch.es_max_mem:
+    default: 1G
+    description: Maximum memory allocated to JVM running ElasticSearch
+  

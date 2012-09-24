@@ -1,0 +1,48 @@
+#!/bin/bash
+
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+# Setup env vars and folders for the webapp_ctl script
+source /var/vcap/jobs/elasticsearch/helpers/ctl_setup.sh 'elasticsearch'
+
+case $1 in
+
+  start)
+    pid_guard $PIDFILE $JOB_NAME
+
+    export ES_HOME="/var/vcap/packages/elasticsearch"
+    RUNAS="vcap"
+    APP_NAME=elasticsearch
+    APP_LONG_NAME=ElasticSearch
+    PIDDIR=$(dirname PIDFILE)
+
+    ANCHORFILE="$PIDDIR/$APP_NAME.anchor"
+    STATUSFILE="$PIDDIR/$APP_NAME.status"
+    JAVASTATUSFILE="$PIDDIR/$APP_NAME.java.status"
+
+    chpst -u $RUNAS:$RUNAS $ES_HOME/bin/elasticsearch \
+        $JOB_DIR/config/elasticsearch.conf \
+        -p $PIDFILE \
+        -Des.config=$JOB_DIR/config/elasticsearch.yml \
+        wrapper.pidfile="$PIDFILE" \
+        wrapper.syslog.ident="$APP_NAME" wrapper.name="$APP_NAME" \
+        wrapper.displayname="$APP_LONG_NAME" \
+        wrapper.daemonize=TRUE \
+        wrapper.anchorfile="$ANCHORFILE" \
+        wrapper.statusfile="$STATUSFILE" \
+        wrapper.java.statusfile="$JAVASTATUSFILE"
+
+    ;;
+
+  stop)
+    kill_and_wait $PIDFILE
+
+    ;;
+  *)
+    echo "Usage: elasticsearch_ctl {start|stop}"
+
+    ;;
+
+esac
+exit 0

@@ -56,7 +56,7 @@ it_runs_indexer() {
 }
 
 it_runs_elasticsearch() {
-  expected='elasticsearch'
+  expected='config/elasticsearch.yml'
   test $(ps ax | grep "${expected}" | grep -v 'grep' | wc -l) = 1
 }
 
