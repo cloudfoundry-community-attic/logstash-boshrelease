@@ -2,7 +2,7 @@
 jobs:
 - broker_redis
 - indexer
-# - storage_elasticsearch
+- storage_elasticsearch
 # - web_logstash
 properties:
   redis:

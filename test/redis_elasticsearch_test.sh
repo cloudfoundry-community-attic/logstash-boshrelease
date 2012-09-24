@@ -50,3 +50,17 @@ it_runs_redis() {
   test $(ps ax | grep "${expected}" | grep -v 'grep' | wc -l) = 1
 }
 
+it_runs_indexer() {
+  expected='config/logstash-indexer.conf'
+  test $(ps ax | grep "${expected}" | grep -v 'grep' | wc -l) = 1
+}
+
+it_runs_elasticsearch() {
+  expected='elasticsearch'
+  test $(ps ax | grep "${expected}" | grep -v 'grep' | wc -l) = 1
+}
+
+it_runs_logstash_webapp() {
+  expected='web'
+  test $(ps ax | grep "${expected}" | grep -v 'grep' | wc -l) = 1
+}
