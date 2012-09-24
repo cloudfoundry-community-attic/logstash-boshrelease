@@ -29,7 +29,6 @@ output {
     debug_format => "ruby"
   }
   <% end %>
-  <% unless properties.indexer || properties.indexer.output || properties.indexer.output.elasticsearch %>
   # http://logstash.net/docs/1.0.17/outputs/elasticsearch
   elasticsearch {
     cluster => "<%= properties.elasticsearch.cluster_name || 'logstash' %>"
@@ -37,6 +36,5 @@ output {
     port => "<%= properties.elasticsearch.transport_port || 9300 %>"
     index => "<%= properties.elasticsearch.index_syntax || 'logstash-%{+YYYY.MM.dd}' %>"
   }
-  <% end %>
 }
 
