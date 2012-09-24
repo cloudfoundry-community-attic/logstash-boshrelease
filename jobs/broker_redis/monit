@@ -1,0 +1,5 @@
+check process broker_redis
+  with pidfile /var/vcap/sys/run/broker_redis/broker_redis.pid
+  start program "/var/vcap/jobs/broker_redis/bin/monit_debugger broker_redis_ctl '/var/vcap/jobs/broker_redis/bin/broker_redis_ctl start'"
+  stop program "/var/vcap/jobs/broker_redis/bin/monit_debugger broker_redis_ctl '/var/vcap/jobs/broker_redis/bin/broker_redis_ctl stop'"
+  group vcap

@@ -1,0 +1,4 @@
+---
+jobs:
+- logstash-monolithic
+properties: {}

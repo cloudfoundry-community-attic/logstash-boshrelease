@@ -1,0 +1,38 @@
+---
+name: indexer
+packages:
+- logstash-monolithic
+templates:
+  bin/indexer_ctl: bin/indexer_ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+  config/logstash-indexer.conf.erb: config/logstash-indexer.conf
+properties:
+  redis.host:
+    default: 127.0.0.1
+    description: Host where redis can be found
+  redis.port:
+    default: 6379
+    description: Port where redis can be found on host
+  redis.password:
+    description: Password to access redis
+  redis.broker_key:
+    default: logstash
+    description: List key for inbound events to be stored before indexing
+  elasticsearch.host:
+    default: 127.0.0.1
+    description: Host where elasticsearch can be found
+  elasticsearch.transport_port:
+    default: 9300
+    description: The port for ElasticSearch transport to use. This is not the ElasticSearch REST API port.
+  elasticsearch.index_syntax:
+    default: "logstash-%{+YYYY.MM.dd}"
+    description: "The index to write events to. This can be dynamic using the %{foo} syntax."
+  indexer.output.stdout:
+    default: false
+    description: "Display all events to STDOUT, thus captured in BOSH logs. Useful for debugging."
+  indexer.output.elasticsearch:
+    default: true
+    description: "Indexed events sent to elasticsearch for storage & search."

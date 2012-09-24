@@ -1,0 +1,15 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+# Available variables
+# $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
+# $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
+export HOME=/var/vcap
+
+ES_VERSION=0.19.9
+
+PATH=/var/vcap/packages/java7/bin:$PATH
+
+tar xfv elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
+cd elasticsearch-${ES_VERSION}
+cp -a * $BOSH_INSTALL_TARGET

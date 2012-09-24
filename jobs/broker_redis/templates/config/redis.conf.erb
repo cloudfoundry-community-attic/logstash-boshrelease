@@ -1,0 +1,19 @@
+<% 
+require 'ostruct'
+properties.redis ||= OpenStruct.new
+%>
+daemonize yes
+pidfile /var/vcap/sys/run/broker_redis/redis.pid
+timeout 300
+loglevel notice
+logfile stdout
+databases 16
+dir /var/vcap/store/broker_redis
+maxclients 0
+maxmemory-policy noeviction
+save 60 1000
+appendonly yes
+port <%= properties.redis.port || 6379 %>
+<% if properties.redis.password # see cruft.md %>
+requirepass <%= properties.redis.password || "redis" %>
+<% end %>

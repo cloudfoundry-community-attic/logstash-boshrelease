@@ -23,3 +23,11 @@ curl/curl-7.27.0.tar.gz:
   object_id: 3d412d9e-e797-46c0-8093-59f3e6330d07
   sha: 93ec1e206350632f550cc2ba3327e2a588bf0617
   size: 3154661
+elasticsearch/elasticsearch-0.19.9.tar.gz:
+  object_id: 0827ac73-e96c-4381-ae8b-ca5d9fb48aa2
+  sha: 699b442ab2d9483084689dee037b5eea38a76652
+  size: 15124504
+redis/redis-2.4.17.tar.gz:
+  object_id: 10d323e9-0348-412d-aa26-60f165b94dfe
+  sha: 3d540531b3d7103a511d29661c2ae666dac60522
+  size: 656155

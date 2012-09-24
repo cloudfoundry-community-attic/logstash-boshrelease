@@ -1,0 +1,5 @@
+check process storage_elasticsearch
+  with pidfile /var/vcap/sys/run/storage_elasticsearch/storage_elasticsearch.pid
+  start program "/var/vcap/jobs/storage_elasticsearch/bin/monit_debugger storage_elasticsearch_ctl '/var/vcap/jobs/storage_elasticsearch/bin/storage_elasticsearch_ctl start'"
+  stop program "/var/vcap/jobs/storage_elasticsearch/bin/monit_debugger storage_elasticsearch_ctl '/var/vcap/jobs/storage_elasticsearch/bin/storage_elasticsearch_ctl stop'"
+  group vcap

@@ -1,0 +1,42 @@
+<% 
+require 'ostruct'
+properties.redis ||= OpenStruct.new
+properties.elasticsearch ||= OpenStruct.new
+%>
+input {
+  # http://logstash.net/docs/1.1.1/inputs/redis
+  redis {
+    host => "<%= properties.redis.host || '127.0.0.1' %>"
+    port => "<%= properties.redis.port || 6379 %>"
+    <% if properties.redis.password # see cruft.md %>
+    password => "<%= properties.redis.password || 'redis' %>"
+    <% end %>
+    type => "redis-input"
+    data_type => "list"
+    key => "<%= properties.redis.broker_key || 'logstash' %>"
+    # redis database number
+    db => 0
+    # We use json_event here since the sender is a logstash agent
+    message_format => "json_event"
+  }
+}
+
+output {
+  <% if properties.indexer && properties.indexer.output && properties.indexer.output.stdout %>
+  # http://logstash.net/docs/1.1.1/outputs/stdout.html
+  stdout {
+    debug => true
+    debug_format => "ruby"
+  }
+  <% end %>
+  <% unless properties.indexer || properties.indexer.output || properties.indexer.output.elasticsearch %>
+  # http://logstash.net/docs/1.0.17/outputs/elasticsearch
+  elasticsearch {
+    cluster => 'logstash'
+    bind_host => "<%= properties.elasticsearch.host || '127.0.0.1' %>"
+    port => "<%= properties.elasticsearch.transport_port || 9300 %>"
+    index => "<%= properties.elasticsearch.index_syntax || 'logstash-%{+YYYY.MM.dd}' %>"
+  }
+  <% end %>
+}
+
