@@ -15,9 +15,6 @@ properties:
   elasticsearch.cluster_name:
     default: logstash
     description: Used to discover and auto-join nodes together
-  elasticsearch.host:
-    default: 0.0.0.0
-    description: Used by modules to bind and publish
   elasticsearch.transport_port:
     default: 9300
     description: The port for ElasticSearch transport to use. This is not the ElasticSearch REST API port.

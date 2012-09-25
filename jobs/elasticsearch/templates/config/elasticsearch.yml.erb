@@ -4,7 +4,7 @@ require 'ostruct'
 properties.elasticsearch ||= OpenStruct.new
 %>
 network:
-  host: <%= properties.elasticsearch.host || '0.0.0.0' %>
+  host: 0.0.0.0
 path:
   logs: /var/vcap/sys/log/elasticsearch
   data: /var/vcap/store/elasticsearch
