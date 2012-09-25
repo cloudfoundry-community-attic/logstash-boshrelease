@@ -1,0 +1,14 @@
+---
+jobs:
+- micro
+properties:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    # password: redis
+    broker_key: logstash
+  elasticsearch:
+    host: 127.0.0.1
+  indexer:
+    output:
+      stdout: true

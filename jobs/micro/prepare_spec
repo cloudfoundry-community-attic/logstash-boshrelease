@@ -1,0 +1,6 @@
+---
+jobs:
+- broker_redis
+- elasticsearch
+- indexer
+- web_logstash

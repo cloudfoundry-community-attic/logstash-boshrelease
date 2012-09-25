@@ -16,3 +16,6 @@ blobs/*
 #*
 data
 .sass-cache/
+jobs/micro/monit
+jobs/micro/spec
+jobs/micro/templates/
