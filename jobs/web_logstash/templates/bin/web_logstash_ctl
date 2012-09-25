@@ -19,7 +19,7 @@ case $1 in
       web \
         --address 0.0.0.0 \
         --port 9292 \
-        --backend elasticsearch://$ES_HOST:$ES_TRANSPORT_PORT/$ES_CLUSTER_NAME
+        --backend elasticsearch://$ES_HOST:$ES_TRANSPORT_PORT/$ES_CLUSTER_NAME \
         --log $LOG_DIR/$JOB_NAME.log &
 
     # store pid in $PIDFILE

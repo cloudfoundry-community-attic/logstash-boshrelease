@@ -1,5 +1,6 @@
 check process web_logstash
   with pidfile /var/vcap/sys/run/web_logstash/web_logstash.pid
   start program "/var/vcap/jobs/web_logstash/bin/monit_debugger web_logstash_ctl '/var/vcap/jobs/web_logstash/bin/web_logstash_ctl start'"
+    with timeout 180 seconds
   stop program "/var/vcap/jobs/web_logstash/bin/monit_debugger web_logstash_ctl '/var/vcap/jobs/web_logstash/bin/web_logstash_ctl stop'"
   group vcap
