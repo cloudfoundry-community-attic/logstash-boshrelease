@@ -1,0 +1,72 @@
+--- 
+packages: 
+- name: curl
+  version: 1
+  sha1: ea2ae871da45025bc0060da17748020480b13f4b
+  fingerprint: 3d63b0406464ee9a60939054eadcf2566620fbbd
+  dependencies: []
+
+- name: elasticsearch
+  version: 1
+  sha1: fbf33010262ced70b15a612c4a6afb4f9f6c0206
+  fingerprint: 33d33c0ec54421b34c4a70946a4b24923c98224a
+  dependencies: 
+  - java7
+- name: java7
+  version: 1
+  sha1: 1ba75142ff1cded473828841b795d097b6e74f2c
+  fingerprint: c8aef065789ed5ef692fa9a05336a8ed12af9c5b
+  dependencies: []
+
+- name: kibana
+  version: 1
+  sha1: cf221173698ad505d39db41c1a093a1905de7ed6
+  fingerprint: bbe2cc1e51a4b64fae83b312ebe8507769e288b3
+  dependencies: 
+  - ruby
+  - curl
+- name: logstash-monolithic
+  version: 1
+  sha1: 29eb4f0d3846ecaab518b647c5425fb55934896f
+  fingerprint: f0e4088adf4a1240a104ec0ec5f585c86a338a67
+  dependencies: 
+  - java7
+- name: redis
+  version: 1
+  sha1: cfb9fc21b2149a76089e66a8aeb49f7fb6d7b2d1
+  fingerprint: 16ba40823e10f205d9d36d48cc9aa76bc35f2c82
+  dependencies: []
+
+- name: ruby
+  version: 1
+  sha1: 79dd4443f2cdcd810064ecb55d88cee7d05a4256
+  fingerprint: 3bfd7ef444733b75cdb7e676c5242b86effaa978
+  dependencies: []
+
+jobs: 
+- name: broker_redis
+  version: 1
+  fingerprint: 3a54f3f6dd5a1496cb79f5d9406d505f4ef699e5
+  sha1: 1734c0fe046f4d4ee2841f7427c1671db0213002
+- name: elasticsearch
+  version: 2
+  fingerprint: adc05a41e215ccc00fd1f579f210c19641315e5e
+  sha1: 1965663e83d4948c105f1863338453cd9b1cc997
+- name: indexer
+  version: 2
+  fingerprint: 5a28105635194415daa9df6296b98d4327429dbd
+  sha1: 42a9d899e16a4eb7f62f6956acc891c25a01a563
+- name: kibana
+  version: 1
+  fingerprint: dc809fb889abcbaf650dbaa09cb8a04d895ef061
+  sha1: fa9d83c2ae83ec851ccc0213234441c81ec48e2c
+- name: micro
+  version: 1
+  fingerprint: d29daa711a5c479d2b2337b0c89379854ebbd80c
+  sha1: 8b17d32af76a6d583f2339b0ad327b85963bf48a
+- name: web_logstash
+  version: 1
+  fingerprint: 86e5b2cdb084bb412b8278ef4ce9dd83f3828dd6
+  sha1: 5a78f788c8b5ca803fdd3a38346d4039522b58bc
+name: logstash
+version: 2
