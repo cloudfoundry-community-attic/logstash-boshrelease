@@ -7,6 +7,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port 9200, 9200 # elasticsearch
   config.vm.forward_port 5601, 5601 # Kibana
   config.vm.forward_port 3000, 3000 # some rails app
+  config.vm.forward_port 6380, 6380 # Redis (non-traditional port)
 
   config.vm.provision :shell, :path => "scripts/vagrant-setup.sh"
 

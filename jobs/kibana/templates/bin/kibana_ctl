@@ -9,7 +9,8 @@ source /var/vcap/jobs/kibana/helpers/ctl_setup.sh 'kibana'
 export LANG=en_US.UTF-8
 
 # ensure job's KibanaConfig.rb loaded
-export RUBYLIB=$JOB_DIR/config:$RUBYLIB
+export RUBYLIB=$JOB_DIR/config:/var/vcap/packages/kibana
+cd /var/vcap/packages/kibana
 
 case $1 in
 

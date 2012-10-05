@@ -4,10 +4,11 @@ jobs:
 - indexer
 - elasticsearch
 - web_logstash
+- kibana
 properties:
   redis:
     host: 127.0.0.1
-    port: 6379
+    port: 6380
     # password: redis
     broker_key: logstash
   elasticsearch:
@@ -18,4 +19,4 @@ properties:
     output:
       stdout: true
   kibana:
-    port: 5061
+    port: 5601
