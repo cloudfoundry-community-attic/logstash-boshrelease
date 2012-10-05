@@ -4,7 +4,7 @@ module KibanaConfig
   # Elasticsearch = ["elasticsearch1:9200","elasticsearch2:9200"]
   <% es_hosts = properties.elasticsearch.hosts || ["localhost"] %>
   <% es_port = properties.elasticsearch.port || 9200 %>
-  Elasticsearch = <% es_hosts.map { |h| "#{h}:#{es_port}" }.inspect %>
+  Elasticsearch = <%= es_hosts.map { |h| "#{h}:#{es_port}" }.inspect %>
 
   # The port Kibana should listen on
   KibanaPort = <%= properties.kibana.port || 5601 %>
