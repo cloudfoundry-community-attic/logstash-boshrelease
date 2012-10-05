@@ -31,3 +31,43 @@ redis/redis-2.4.17.tar.gz:
   object_id: 10d323e9-0348-412d-aa26-60f165b94dfe
   sha: 3d540531b3d7103a511d29661c2ae666dac60522
   size: 656155
+nginx/devel-kit-v0.2.17rc2.tar.gz:
+  object_id: 6fb889a0-6cfb-4411-ab62-caf0770f2f2a
+  sha: 7eadfe53d674972c0f7f27d7b26eff95829bc0b2
+  size: 64964
+nginx/headers-more-v0.15rc1.tgz:
+  object_id: b81ba798-ef6f-45b8-906a-8e89f3d752e7
+  sha: ba7bf757be8004d9dbffbe583396620cfcbed788
+  size: 25490
+nginx/lbase64.tar.gz:
+  object_id: 5690fff0-3920-402d-b8f8-820bee680dd4
+  sha: 5692619dae780dbdf9edc994f9dcd7dce7b24646
+  size: 2503
+nginx/lua-5.1.4.tar.gz:
+  object_id: c889f31e-0a33-4f0d-8715-f429edf8f17c
+  sha: 2b11c8e60306efb7f0734b747588f57995493db7
+  size: 216679
+nginx/lua-cjson-1.0.3.tar.gz:
+  object_id: 3ed10a71-9f3a-457d-a800-8c1f9f912412
+  sha: 7335961ff6619a7eae824e8cf9432100ca377476
+  size: 31780
+nginx/lua-openssl-0.1.1.tar.gz:
+  object_id: e00d9154-beea-4ac1-860b-4617ef8e4ae0
+  sha: 27f38b3f7d44f59690ed081f892891a35a5ebfaa
+  size: 69253
+nginx/nginx-1.2.0.tar.gz:
+  object_id: 0ccbd597-5a5e-4ae9-8d73-9aaff8e3a98a
+  sha: 15cec8d1b8dbf2007f9f99594a08a2f45814034e
+  size: 716067
+nginx/nginx-lua.v0.4.1.tar.gz:
+  object_id: 5efae807-a6e9-4a1a-8cf2-74807c00c554
+  sha: fd37ffa48a618b2e521ea9797d13f523640fad4f
+  size: 240823
+nginx/nginx_upload_module-2.2.0.tar.gz:
+  object_id: 64ed842e-9166-4db9-87cd-378b396a5390
+  sha: 93d6e83e613a0ce2ed057a434b344fa1b6609b47
+  size: 25796
+nginx/pcre-8.21.tar.gz:
+  object_id: 200c4d67-f2c5-4a89-bd1a-81ff23be0fdf
+  sha: dffb43eff9729c0999843a86ef97961b8c4f6ac8
+  size: 1556329
