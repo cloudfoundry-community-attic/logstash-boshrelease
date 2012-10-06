@@ -8,5 +8,5 @@ blobstore:
     access_key_id: AKIAIDC76IQWCWDL3QKQ
     secret_access_key: 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
     encryption_key: asdfasfdasdfasdf
-min_cli_version: "0.20"
+min_cli_version: 1.0.rc1
 final_name: logstash

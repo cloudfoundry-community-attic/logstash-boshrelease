@@ -32,6 +32,7 @@ output {
   # http://logstash.net/docs/1.0.17/outputs/elasticsearch
   elasticsearch {
     cluster => "<%= properties.elasticsearch.cluster_name || 'logstash' %>"
+    host => "<%= (properties.elasticsearch.hosts || ['127.0.0.1']).first %>"
     port => "<%= properties.elasticsearch.transport_port || 9300 %>"
     index => "<%= properties.elasticsearch.index_syntax || 'logstash-%{+YYYY.MM.dd}' %>"
     node_name => "logstash-indexer"

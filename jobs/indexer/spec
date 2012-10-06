@@ -25,9 +25,10 @@ properties:
   elasticsearch.cluster_name:
     default: logstash
     description: Used to discover elasticsearch cluster
-  elasticsearch.host:
-    default: 127.0.0.1
-    description: Host where elasticsearch can be found
+  elasticsearch.hosts:
+    default:
+    - 127.0.0.1
+    description: Hosts where elasticsearch can be found
   elasticsearch.transport_port:
     default: 9300
     description: The port for ElasticSearch transport to use. This is not the ElasticSearch REST API port.
