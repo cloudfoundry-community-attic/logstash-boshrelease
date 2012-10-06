@@ -4,3 +4,4 @@ dependencies:
 - java7
 files:
 - elasticsearch/elasticsearch-0.19.9.tar.gz
+- elasticsearch/elasticsearch-cloud-aws-1.9.0.zip

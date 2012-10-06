@@ -7,9 +7,26 @@ set -u # report the usage of uninitialized variables
 export HOME=/var/vcap
 
 ES_VERSION=0.19.9
+ES_AWS_VERSION=1.9.0
 
 PATH=/var/vcap/packages/java7/bin:$PATH
 
+cd $BOSH_COMPILE_TARGET
 tar xfv elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
 cd elasticsearch-${ES_VERSION}
 cp -a * $BOSH_INSTALL_TARGET
+
+# Now include AWS-specific support via some jars, e.g.
+# aws-java-sdk-1.3.18.jar
+# commons-logging-1.1.1.jar
+# httpclient-4.1.1.jar
+# commons-codec-1.3.jar
+# elasticsearch-cloud-aws-1.9.0.jar
+# httpcore-4.1.jar
+
+cd $BOSH_COMPILE_TARGET
+unzip elasticsearch/elasticsearch-cloud-aws-${ES_AWS_VERSION}.zip \
+  -d elasticsearch-cloud-aws-${ES_AWS_VERSION}
+cd elasticsearch-cloud-aws-${ES_AWS_VERSION}
+mkdir -p $BOSH_INSTALL_TARGET/plugins/elasticsearch-cloud-aws
+cp -a *.jar $BOSH_INSTALL_TARGET/plugins/elasticsearch-cloud-aws
