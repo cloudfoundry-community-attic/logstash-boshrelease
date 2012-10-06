@@ -12,4 +12,25 @@ cluster:
   name: <%= properties.elasticsearch.cluster_name || 'logstash' %>
 node:
   name: "<%= name %>/<%= index %>"
-
+<% if properties.aws && properties.aws.access_key %>
+# elasticsearch-cloud-aws plugin
+# The AWS Cloud plugin allows to use AWS EC2 API for the unicast
+# discovery mechanism as well as using S3 as a shared gateway
+cloud:
+  aws:
+    access_key: <%= properties.aws.access_key %>
+    secret_key: <%= properties.aws.secret_key %>
+  node:
+    # Automatic Node Attributes
+    # Though not dependent on actually using ec2 as discovery
+    # (but still requires the cloud aws plugin installed), the
+    # plugin can automatically add node attributes relating to ec2
+    # (for example, availability zone, that can be used with
+    # the awareness allocation feature). In order to enable it,
+    # set cloud.node.auto_attributes to true in the settings.
+    auto_attributes: true
+# ec2 discovery allows to use the ec2 APIs to perform automatic discovery
+# (similar to multicast in non hostile multicast environments).
+discovery:
+    type: ec2
+<% end %>

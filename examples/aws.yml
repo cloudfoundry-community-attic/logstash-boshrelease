@@ -1,0 +1,33 @@
+# ElasticSearch on AWS needs EC2/S3 credentials to discover other ES nodes
+# and use S3 as a shared gateway.
+# TODO - what IAM group access required? read-only EC2 + read-write S3?
+# TODO - need per-ES cluster security groups to constrain discovery?
+# TODO - or, use EC2 tags? (can BOSH do this?)
+#
+# Currently testing a IAM group "elasticsearch-cloud-aws-plugin" with readonly 
+# EC2 access, with a shared user "elasticsearch-cloud-aws-plugin".
+---
+jobs:
+- broker_redis
+- indexer
+- elasticsearch
+- web_logstash
+- kibana
+properties:
+  redis:
+    host: 127.0.0.1
+    port: 6380
+    # password: redis
+    broker_key: logstash
+  elasticsearch:
+    host: 127.0.0.1
+    hosts:
+    - 127.0.0.1
+  indexer:
+    output:
+      stdout: true
+  kibana:
+    port: 5601
+  aws:
+    access_key: ACCESS_KEY
+    secret_key: SECRET_KEY

@@ -24,4 +24,3 @@ properties:
   elasticsearch.es_max_mem:
     default: 1G
     description: Maximum memory allocated to JVM running ElasticSearch
-  
